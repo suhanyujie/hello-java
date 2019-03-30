@@ -5,11 +5,36 @@ public class type1 {
 //        scaleType();
 //        float1();
 //        charType();
-        operatorType();
+//        operatorType();
+        opLogic();
     }
 
     public static void type1() {
 
+    }
+
+    /**
+     * 逻辑运算符
+     */
+    public static void opLogic(){
+        boolean b1,b2,bres;
+        // 左移运算符
+        int i1 = 2;
+        i1 = i1 << 3;// 2*2E3
+        System.out.println(i1);
+        // 或运算符
+        b1 = true;
+        b2 = false;
+        System.out.println(b1 | b2);
+        // 与运算符
+        b1 = true;
+        b2 = false;
+        System.out.println(b1 & b2);
+        //异或运算符
+        b1 = true;
+        b2 = false;
+        bres = b1 ^ b2;
+        System.out.println(bres);
     }
 
     public static void operatorType(){
