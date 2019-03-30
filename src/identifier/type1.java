@@ -18,10 +18,18 @@ public class type1 {
      */
     public static void opLogic(){
         boolean b1,b2,bres;
+
         // 左移运算符 左移一位相当于乘2；右移一位相当于除以2
         int i1 = 2;
         i1 = i1 << 3;// 2*2E3
         System.out.println(i1);
+
+        // 字符串运算符
+        // 如果+左右两边，只要有字符类型，此时`+`就是字符串连接符，否则就是运算符
+        i1 = 123;
+        System.out.println(""+i1);
+
+
         // 或运算符
         b1 = true;
         b2 = false;
