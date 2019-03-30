@@ -10,20 +10,22 @@ public class BallGame extends JFrame {
     double x1 = 100;
     double y1 = 100;
     boolean right = true;
+    double degree = 3.14/4;
 
     public void paint(Graphics g){
         g.drawImage(desk,0,0,null);
         g.drawImage(ball,(int)x1,(int)y1,null);
-        if (right) {
-            x1 = x1 + 10;
-        } else {
-            x1 = x1 - 10;
+
+        x1 = x1 + 10* Math.cos(degree);
+        y1 = y1 + 10* Math.sin(degree);
+        // 碰到上下边界
+        if (y1 > 500-40-30 || y1<40+40) {
+            degree = -degree;
         }
-        if (x1 > 856-40-30) {
-            right = false;
-        }
-        if (x1 < 40) {
-            right = true;
+
+        // 碰到左右边界
+        if (x1<40 || x1>856-40-30) {
+            degree = 3.14 - degree;
         }
     }
 

@@ -18,7 +18,7 @@ public class type1 {
      */
     public static void opLogic(){
         boolean b1,b2,bres;
-        // 左移运算符
+        // 左移运算符 左移一位相当于乘2；右移一位相当于除以2
         int i1 = 2;
         i1 = i1 << 3;// 2*2E3
         System.out.println(i1);
