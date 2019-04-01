@@ -1,12 +1,19 @@
 package ControlAndStatement;
 
 public class Recursion {
+    static int somePro = 0;
     public static void main(String[] args) {
-
+        int res = testRev(somePro);
+        System.out.println(res);
     }
 
-    public static void testRev(){
+    public static int testRev(int i1){
+        if (i1<20) {
+            return testRev(i1+1);
+        }
+        System.out.println(i1);
 
+        return i1+1;
     }
 }
 
