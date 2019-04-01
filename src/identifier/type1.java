@@ -11,10 +11,6 @@ public class type1 {
         opPriority();
     }
 
-    public static void type1() {
-
-    }
-
     /**
      * 运算符优先级
      */
