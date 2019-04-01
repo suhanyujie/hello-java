@@ -6,11 +6,35 @@ public class type1 {
 //        float1();
 //        charType();
 //        operatorType();
-        opLogic();
+//        opLogic();
+//        strConcat();
+        opPriority();
     }
 
     public static void type1() {
 
+    }
+
+    /**
+     * 运算符优先级
+     */
+    public static void opPriority(){
+        // 括号 > (一元运算符 递增 递减 ) > (算术运算符 左移 右移) > 关系运算符 > (位运算符 逻辑运算符& | ^) > (逻辑运算符&& || ?:) > (赋值运算符 扩展运算符)
+        // 其中要注意：逻辑非 > 逻辑与 > 逻辑或
+        int i1 = 2 >> 1 + 1;// 算数运算符Priority高，所以先计算1+1
+        System.out.println(i1);
+        // 关系运算符priority低，所以先计算i1+4，然后再进行比较！
+        boolean b1 = i1 + 4 > 4;
+        System.out.println(b1==false);
+    }
+
+    /**
+     * 字符串连接操作符
+     */
+    public static void strConcat(){
+        // 只要`+`左边或右边，有字符串类型，此时`+`所表达的意思就是字符串连接操作符
+        int i1 = 123123123;
+        System.out.println(""+i1);
     }
 
     /**
@@ -28,7 +52,6 @@ public class type1 {
         // 如果+左右两边，只要有字符类型，此时`+`就是字符串连接符，否则就是运算符
         i1 = 123;
         System.out.println(""+i1);
-
 
         // 或运算符
         b1 = true;
