@@ -1,0 +1,80 @@
+package parse;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
+public class NonTerminalSumbol {
+    static enum Exp {
+        SplieSpaceSign, SpaceOrEnter, Space,
+        // 基本单元
+        Enter,This,Null,Boolean,
+        Number, Variable,String,RegEx,
+        Element,
+        // 表达式
+        L0Expression, L0ParamExpression, L0Sign,
+        L1Expression, L1ParamExpression,
+        L2Expression, L2ParamExpression, L2Sign,
+        L3Expression, L3ParamExpression, L3Sign,
+        L4Expression, L4ParamExpression, L4Sign,
+        L5Expression, L5ParamExpression, L5Sign,
+        L6Expression, L6ParamExpression, L6Sign,
+        L7Expression, L7ParamExpression, L7Sign,
+        L8Expression, L8ParamExpression, L8Sign,
+        L9Expression, L9ParamExpression, L9Sign,
+        L10Expression, L10ParamExpression, L10Sign,
+        L11Expression,
+        // 控制流语法
+        Chunk, StartChunk, Line,
+        Command, Operate, When,
+        DefineVariable,DefineVariableElement,
+        DefineFunction, ParamsList,
+        IfElseChunk,TryCatch,
+        WhileChunk, DoUntilChunk,
+        ForeachChunk, ForEachCommand, ForEachCondition,
+        // 语法糖
+        Lambda,
+        List, Map, MapEntry,
+        Invoker,InvokerBraceless, InvokerBanLambda, InvokerBracelessBanLambda,
+        ParamList, ParamListBanTokens,
+        Array, Container,
+    }
+
+    final Exp exp;
+    Character sign = null;
+
+    final ArrayList<Object[]> expansionList = new ArrayList<>();
+    final ArrayList<TerminalSymbol> banList = new ArrayList<>();
+
+    final ArrayList<HashSet<TerminalSymbol>> firstSetList = new ArrayList<>();
+    final HashSet<TerminalSymbol> firstSet = new HashSet<>();
+
+    NonTerminalSumbol(Exp exp) {
+        this.exp = exp;
+    }
+
+    NonTerminalSumbol ban(TerminalSymbol...args) {
+        for (TerminalSymbol node:args) {
+            banList.add(node);
+        }
+        return this;
+    }
+
+    NonTerminalSumbol or(Object ...args) {
+        expansionList.add(args);
+        return this;
+    }
+
+    NonTerminalSumbol sign(char sign) {
+        this.sign = sign;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        String str = String.valueOf(exp);
+        if (sign != null) {
+            str += "("+sign+")";
+        }
+        return str;
+    }
+}

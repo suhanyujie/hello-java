@@ -54,7 +54,7 @@ public class SignParser {
         return signCharSet.contains(c);
     }
 
-    static List<String> parse(String str){
+    static List<String> parse(String str) throws LexicalAnalysisException {
         LinkedList<String> rsContainer = new LinkedList<>();
         int startIndex = 0;
         while (startIndex < str.length()) {

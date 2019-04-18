@@ -35,7 +35,7 @@ public class LexAndAnalysis {
     }
 
     private Token endToken = null;
-    private final Reader reader;
+    private Reader reader;
 
     public void LexicalAnalysis(Reader reader){
         this.reader = reader;
