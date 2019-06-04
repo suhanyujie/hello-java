@@ -307,8 +307,8 @@ public class SyntacticDefine {
         {
             expContainer.put(node.exp, node);
         }
-        FirstSetConstructor firstSetConstructor = new FirstSetConstructor(expContainer);
-        firstSetConstructor.build();
+//        FirstSetConstructor firstSetConstructor = new FirstSetConstructor(expContainer);
+//        firstSetConstructor.build();
     }
 
     static NonTerminalSymbol getNonTerminalSymbol(Exp exp) {

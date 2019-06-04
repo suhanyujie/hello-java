@@ -79,6 +79,7 @@ public class LexAndAnalysis {
     private boolean readChar(char c) throws LexicalAnalysisException {
         boolean moveCursor = true;
         Token.Type createType = null;
+        char[] FilterChar = new char[]{};
         if (!include(FilterChar, c)) {
             if (state == State.Normal) {
                 if (inIdentifierSetButNotRear(c)) {
