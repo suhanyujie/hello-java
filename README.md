@@ -7,6 +7,7 @@
 * [标识符](./src/identifier)
 * [控制和语句](./src/ControlAndStatement)
 * [类和对象](./src/Object)
+* [字符流和字节流](./src/study/stream)
 
 ## 参考资料
 * b站视频教程 https://www.bilibili.com/video/av43896218
