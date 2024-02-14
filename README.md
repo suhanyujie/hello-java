@@ -1,5 +1,7 @@
 ## hello java
-* java入门学习
+Java 学习。虽然该仓库 2019 年就创建了，但一直没能在工作中用上 java，导致学习搁浅。
+
+现在，为了给下一份工作增加更多机会，需要更多地学习才行。
 
 ## index
 * [hello world](./src/hello)
