@@ -1,21 +1,34 @@
 package hello;
 
-import deskBall.BallGame;
-
-import java.util.List;
-
 public class HelloWorld {
-    public static void main(String[] args){
-        ballGame();
+    public static void main(String[] args) {
+        // hello1();
+        int res = varTypeFn1(1, 2);
+        System.out.printf(String.format("%d\n", res));
+        res = 3;
+        System.out.printf(String.format("%d\n", res));
     }
 
-    public static void hello1(){
+    /**
+     * print hello world
+     */
+    public static void hello1() {
         String s1 = "samuel";
         System.out.println("hello world..." + s1);
     }
 
-    public static void ballGame(){
-        BallGame game = new BallGame();
-        game.launchFrame();
+    /**
+     * 基本类型 int
+     *
+     * @param a int
+     * @param b int
+     * @return int
+     */
+    public static int varTypeFn1(int a, int b) {
+        return a + b;
     }
 }
+
+/**
+ *
+ */
