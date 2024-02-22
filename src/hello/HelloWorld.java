@@ -1,5 +1,6 @@
 package hello;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class HelloWorld {
@@ -14,9 +15,10 @@ public class HelloWorld {
 //        multiLineStr1();
 //        defArray1();
 //        strArr1();
+        traverseArr1();
 //        readInput1();
 //        switchCases();
-        switchAsExpressive();
+//        switchAsExpressive();
     }
 
     /**
@@ -88,7 +90,21 @@ public class HelloWorld {
         int[] arr2 = new int[]{1, 2};
         int[] arr3 = {1, 2};
         arr1[0] = arr1[1] = 1;
-        System.out.printf("数组：%s, len:%d\n", arr1, arr1.length);
+        System.out.printf("数组：%s, len:%d\n", Arrays.toString(arr1), arr1.length);
+    }
+
+    // 遍历数组
+    public static void traverseArr1() {
+        String[] sArr = {"hello", "world", "."};
+        System.out.printf("数组：%s, len:%d\n", Arrays.toString(sArr), sArr.length);
+
+        // for each 遍历
+        for (String item : sArr) {
+            System.out.println(item);
+        }
+        for (int idx = sArr.length - 1; idx >= 0; idx--) {
+            System.out.println(sArr[idx]);
+        }
     }
 
     public static void strArr1() {
